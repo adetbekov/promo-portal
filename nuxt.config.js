@@ -2,9 +2,6 @@ const pkg = require('./package')
 const nodeExternals = require("webpack-node-externals")
 
 module.exports = {
-    /*
-     ** Headers of the page
-     */
     head: {
         title: 'promo-portal',
         meta: [
@@ -16,9 +13,6 @@ module.exports = {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
-    /*
-     ** Customize the progress bar color
-     */
     loading: { color: '#3B8070' },
     plugins: [
         "~/plugins/axios",
@@ -44,10 +38,6 @@ module.exports = {
         host: "https://api.rglservice.kz",
         prefix: "/v2/180713142003"
     },
-
-    /*
-     ** Build configuration
-     */
     build: {
         vendor: ["vue-awesome"],
         // postcss: [
@@ -59,22 +49,18 @@ module.exports = {
         extend(config, { isDev, isClient, isServer }) {
             if (isDev && isClient) {
                 config.module.rules.push({
-                        enforce: "pre",
-                        test: /\.(vue)$/,
-                        loader: "vue-loader",
-                        exclude: /(node_modules)/,
-                        options: {
-                            fix: true
-                        }
-                    }, {
-                        resourceQuery: /blockType=i18n/,
-                        type: 'javascript/auto',
-                        loader: '@kazupon/vue-i18n-loader'
-                    })
-                    // config.module.rules.find(
-                    //         el => el.loader === "vue-loader"
-                    //     ).options.loaders.i18n =
-                    //     "@kazupon/vue-i18n-loader"
+                    enforce: "pre",
+                    test: /\.(vue)$/,
+                    loader: "eslint-loader",
+                    exclude: /(node_modules)/,
+                    options: {
+                        fix: true
+                    }
+                }, {
+                    resourceQuery: /blockType=i18n/,
+                    type: 'javascript/auto',
+                    loader: '@kazupon/vue-i18n-loader'
+                })
             }
 
             if (isServer) {
