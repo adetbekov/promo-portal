@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js dev
+  /usr/local/Cellar/node/9.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js add ug-plain-loader
 
 PATH: 
   /Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/opt/gettext/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/opt/gettext/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin
@@ -31,6 +31,8 @@ npm manifest:
       "dependencies": {
           "@kazupon/vue-i18n-loader": "^0.3.0",
           "@nuxtjs/axios": "^5.5.2",
+          "cookieparser": "^0.1.0",
+          "css-loader": "^2.1.1",
           "gsap": "^2.1.3",
           "js-cookie": "^2.2.0",
           "moment": "^2.24.0",
@@ -2167,6 +2169,10 @@ Lockfile:
   cookie@^0.3.1:
     version "0.3.1"
     resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+  
+  cookieparser@^0.1.0:
+    version "0.1.0"
+    resolved "https://registry.yarnpkg.com/cookieparser/-/cookieparser-0.1.0.tgz#ea12cb1085c174f3167faeaf7985f79abe671d0e"
   
   copy-concurrently@^1.0.0:
     version "1.0.5"
@@ -7601,16 +7607,14 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Command failed.
-  Exit signal: SIGSEGV
-  Command: sh
-  Arguments: -c nuxt
-  Directory: /Users/dosya/Projects/promo-portal
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:180:13)
-      at maybeClose (internal/child_process.js:936:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+  Error: https://registry.yarnpkg.com/ug-plain-loader: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:65019:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:132430:22)
+      at Request.emit (events.js:180:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:133413:10)
+      at Request.emit (events.js:180:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:133333:12)
+      at Object.onceWrapper (events.js:272:13)
+      at IncomingMessage.emit (events.js:185:15)
+      at endReadableNT (_stream_readable.js:1101:12)
+      at process._tickCallback (internal/process/next_tick.js:114:19)

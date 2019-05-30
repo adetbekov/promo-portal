@@ -15,12 +15,8 @@
 
 <template lang="pug">
 ssr-loading(v-cloak)
-  .default-layout
-      section
-        .navbar
-          span
-            span {{ $t("search") }}
-        nuxt.content
+  .disclaimer-layout
+    nuxt.content
 </template>
 
 
@@ -39,7 +35,7 @@ export default {
 <style lang="sass">
 // @import "assets/styles/fonts/lato.sass"
 
-.default-layout
+.disclaimer-layout
   font-family: "Lato", Helvetica, sans-serif !important
   font-weight: 400
   color: #2c3e50
@@ -57,21 +53,6 @@ section
   .content
     overflow-y: auto
 
-    
-  .navbar
-    padding: 27px 20px
-    width: 100%
-    margin: 0
-    height: 40px
-    color: gray
-    background-color: white
-    box-sizing: border-box
-    display: flex
-    flex-direction: column
-    justify-content: center
-    
-    span span
-      margin-left: 5px
 </style>
 
 <style>
