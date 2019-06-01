@@ -1,50 +1,16 @@
-<i18n>
-{
-	"en": {
-    "rules": "Rules of participation",
-    "gifts": "Prizes",
-    "rating": "Winners rating",
-    "cabinet": "Personal Area",
-    "hotline": "Hotline"
-	},
-	"ru": {
-    "rules": "Правила участия",
-    "gifts": "Призы",
-    "rating": "Рейтинг победителей",
-    "cabinet": "Личный кабинет",
-    "hotline": "Горячая линия"
-	},
-	"kz": {
-    "rules": "Қатысу ережелері",
-    "gifts": "Сыйлықтар",
-    "rating": "Жеңімпаздар рейтингі",
-    "cabinet": "Жеке кабинет",
-    "hotline": "Телефон"
-	}
-}
-</i18n>
-
-
 <template lang="pug">
 ssr-loading(v-cloak)
   .default-layout
       section
         .navbar
           Container.container
-            img(src="~assets/images/image.png", width=98, alt="Белый медведь")
-            ul.menu
-              li
-                n-link(:to="localePath('rules')") {{ $t("rules") }}
-                n-link(:to="localePath('gifts')") {{ $t("gifts") }}
-                n-link(:to="localePath('rating')") {{ $t("rating") }}
-                n-link(:to="localePath('cabinet')") {{ $t("cabinet") }}
-                Locale
+            Navbar
         nuxt.content
 </template>
 
 
 <script>
-import Locale from '~/components/bars/Locale'
+import Navbar from '~/components/bars/Navbar'
 import SSRLoading from "~/components/toolkit/SSRLoading"
 import Container from "~/components/toolkit/Container"
 
@@ -52,7 +18,7 @@ export default {
   components: {
     SsrLoading: SSRLoading,
     Container: Container,
-    Locale: Locale
+    Navbar: Navbar
   }
 }
 </script>
@@ -82,7 +48,7 @@ section
     
   .navbar
     width: 100%
-    padding: 6px 0px
+    padding: 3px 0px
     margin: 0
     color: gray
     background-color: white
@@ -94,20 +60,6 @@ section
       flex-direction: row
       justify-content: between
 
-.menu
-  display: flex
-  flex-direction: column
-  justify-content: center
-  list-style: none
-  a
-    font-weight: regular
-    text-decoration: none
-    color: $color-text-black
-    padding: 0 11px
-    transition: all 0.2s ease-in-out
-
-    &:hover
-      color: $color-red
 </style>
 
 <style>

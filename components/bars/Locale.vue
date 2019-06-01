@@ -1,6 +1,6 @@
 <template lang="pug">
-  section(id="locales")
-    nuxt-link(v-for="(locale, index) in $i18n.locales",
+  span(id="locales")
+    n-link(v-for="(locale, index) in $i18n.locales",
       v-if="locale.code !== $i18n.locale",
       :key="index",
       :exact="true",
@@ -9,9 +9,17 @@
 
 <style lang="sass" scoped>
   #locales
-    * 
-      display: inline-block
+    a
+      // display: inline-block
       user-select: none
-      padding: 0 5px
       margin: 0
+      font-weight: regular
+      text-decoration: none
+      color: $color-text-black
+      padding: 0 20px 0 0
+      transition: all 0.2s ease-in-out
+
+      &:hover
+        color: $color-red
+
 </style>
