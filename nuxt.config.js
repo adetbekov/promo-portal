@@ -14,15 +14,17 @@ module.exports = {
         ]
     },
     loading: { color: '#3B8070' },
+    styleResources: {
+        scss: ['~/assets/styles/combine.sass']
+    },
     plugins: [
         "~/plugins/axios",
-        // "~/plugins/font-awesome",
         { src: "~/plugins/nuxt-client-init.js", ssr: false },
-        // '@/plugins/element-ui'
+        '@/plugins/element-ui'
     ],
     modules: [
         '@nuxtjs/axios',
-        'nuxt-sass-resources-loader', ["nuxt-i18n", require("./i18n/config")],
+        '@nuxtjs/style-resources', ["nuxt-i18n", require("./i18n/config")],
         "nuxt-mq"
     ],
     mq: {
@@ -39,7 +41,6 @@ module.exports = {
         prefix: "/v2/180713142003"
     },
     build: {
-        vendor: ["vue-awesome"],
         // postcss: [
         //     require("postcss-nested")(),
         //     require("postcss-responsive-type")(),

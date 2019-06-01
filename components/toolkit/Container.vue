@@ -11,11 +11,12 @@ export default {
 
 <style lang="sass" scoped>
 .container 
-  padding-right: 15px
-  padding-left: 15px
+  padding-right: 143px
+  padding-left: 143px
   margin-right: auto
   margin-left: auto
   width: 80%
+  height: 100%
 
   &.mobile
     width: 95%
