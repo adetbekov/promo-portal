@@ -1,59 +1,97 @@
-// <template lang="jade">
-//   el-header(id="header")
-//     .left
-//       slot(name="left")
-//         Logo(logo="acs")
-//     .center
-//       slot(name="center")
-//     .righta
-//       slot(name="right")
-//       fa(name="search" scale="0.9")
-//       fa(name="bars")
-// </template>
+<i18n>
+{
+	"en": {
+    "rules": "Rules of participation",
+    "gifts": "Prizes",
+    "rating": "Winners rating",
+    "cabinet": "Personal Area",
+    "hotline": "Hotline"
+	},
+	"ru": {
+    "rules": "Правила участия",
+    "gifts": "Призы",
+    "rating": "Рейтинг победителей",
+    "cabinet": "Личный кабинет",
+    "hotline": "Горячая линия"
+	},
+	"kz": {
+    "rules": "Қатысу ережелері",
+    "gifts": "Сыйлықтар",
+    "rating": "Жеңімпаздар рейтингі",
+    "cabinet": "Жеке кабинет",
+    "hotline": "Телефон"
+	}
+}
+</i18n>
 
-// <script>
-// import Logo from "~/components/navbar/Logo"
+<template lang="pug">
+    ul.menu
+        li.logo
+            Logo
+        li.links
+            n-link(:to="localePath('rules')") {{ $t("rules") }}
+            n-link(:to="localePath('gifts')") {{ $t("gifts") }}
+            n-link(:to="localePath('rating')") {{ $t("rating") }}
+            n-link(:to="localePath('cabinet')") {{ $t("cabinet") }}
+            Locale.locale
+        li.number
+            span {{ $t("hotline") }}
+            p 8 800 070 1971
+</template>
 
-// export default {
-//   components: {
-//     Logo
-//   }
-// }
-// </script>
+<script>
+import Logo from "~/components/bars/Logo"
+import Locale from "~/components/bars/Locale"
 
-// <style lang="sass">
-// #header
-//   width: 100%
-//   z-index: 10
-//   display: flex
-//   align-items: center
-//   justify-content: space-between
-//   font-size: 16px
-//   position: relative
+export default {
+  components: {
+    Logo,
+    Locale
+  }
+}
+</script>
 
-//   *
-//     display: flex
-//     align-items: center
-//     transition: all 0.2s ease-in-out
+<style lang="sass" scoped>
+.menu
+  width: 100%
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  list-style: none
+  font-size: 20px
+  margin: 0
+  padding: 0
 
-//   .right 
-//     *
-//       padding: 5px 0 5px 20px
+  .links
+    padding: 0 20px
+
+  a
+    font-weight: regular
+    text-decoration: none
+    color: $color-text-black
+    padding: 0 20px 0 0
+    transition: all 0.2s ease-in-out
+
+    &:hover
+      color: $color-red
   
-//   .left > *
-//     padding: 5px 20px 5px 0
+  .number
+    min-width: 120px
+    display: flex
+    flex-direction: column
+    justify-content: between
+    color: $color-text-black
+    text-align: right
 
-//   .center
-//     position: absolute
-//     left: 0
-//     right: 0
-    
-//     *
-//       margin: auto
+    span
+      font-size: 18px
+
+    p
+      padding: 0
+      margin: 0
+      font-weight: bold
+      font-size: 24px
   
-//   *, a
-//     color: $color-text-gray
 
-//   a:hover
-//     color: $color-text-primary-hover
-// </style>
+</style>
