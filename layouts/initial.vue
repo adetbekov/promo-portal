@@ -1,18 +1,3 @@
-<i18n>
-{
-	"en": {
-    "search": "Search"
-	},
-	"ru": {
-    "search": "Найти"
-	},
-	"kz": {
-    "search": "Іздеу"
-	}
-}
-</i18n>
-
-
 <template lang="pug">
 ssr-loading(v-cloak)
   .disclaimer-layout

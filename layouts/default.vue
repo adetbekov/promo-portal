@@ -1,13 +1,25 @@
 <i18n>
 {
 	"en": {
-    "search": "Search"
+    "rules": "Rules of participation",
+    "gifts": "Prizes",
+    "rating": "Winners rating",
+    "cabinet": "Personal Area",
+    "hotline": "Hotline"
 	},
 	"ru": {
-    "search": "Найти"
+    "rules": "Правила участия",
+    "gifts": "Призы",
+    "rating": "Рейтинг победителей",
+    "cabinet": "Личный кабинет",
+    "hotline": "Горячая линия"
 	},
 	"kz": {
-    "search": "Іздеу"
+    "rules": "Қатысу ережелері",
+    "gifts": "Сыйлықтар",
+    "rating": "Жеңімпаздар рейтингі",
+    "cabinet": "Жеке кабинет",
+    "hotline": "Телефон"
 	}
 }
 </i18n>
@@ -18,31 +30,42 @@ ssr-loading(v-cloak)
   .default-layout
       section
         .navbar
-          span
-            span {{ $t("search") }}
+          Container.container
+            img(src="~assets/images/image.png", width=98, alt="Белый медведь")
+            ul.menu
+              li
+                n-link(:to="localePath('rules')") {{ $t("rules") }}
+                n-link(:to="localePath('gifts')") {{ $t("gifts") }}
+                n-link(:to="localePath('rating')") {{ $t("rating") }}
+                n-link(:to="localePath('cabinet')") {{ $t("cabinet") }}
+                Locale
         nuxt.content
 </template>
 
 
 <script>
-// import Sidebar from '~/components/bars/Sidebar'
+import Locale from '~/components/bars/Locale'
 import SSRLoading from "~/components/toolkit/SSRLoading"
+import Container from "~/components/toolkit/Container"
 
 export default {
   components: {
-    SsrLoading: SSRLoading
+    SsrLoading: SSRLoading,
+    Container: Container,
+    Locale: Locale
   }
 }
 </script>
 
 
-<style lang="sass">
-// @import "assets/styles/fonts/lato.sass"
+<style lang="sass" scoped>
+@import "assets/styles/fonts/bebas-neue.sass"
 
 .default-layout
-  font-family: "Lato", Helvetica, sans-serif !important
-  font-weight: 400
-  color: #2c3e50
+  font-family: "Bebas Neue", Roboto, sans-serif !important
+  font-weight: regular
+  font-size: 22px
+  color: $color-text-black
   padding: 0
   margin: 0
   height: 100%
@@ -52,26 +75,39 @@ export default {
 section
   width: 100%
   max-height: 100vh
-  background-color: #fafafa
 
   .content
     overflow-y: auto
 
     
   .navbar
-    padding: 27px 20px
     width: 100%
+    padding: 6px 0px
     margin: 0
-    height: 40px
     color: gray
     background-color: white
     box-sizing: border-box
-    display: flex
-    flex-direction: column
-    justify-content: center
-    
-    span span
-      margin-left: 5px
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+    .container
+      display: flex
+      flex-direction: row
+      justify-content: between
+
+.menu
+  display: flex
+  flex-direction: column
+  justify-content: center
+  list-style: none
+  a
+    font-weight: regular
+    text-decoration: none
+    color: $color-text-black
+    padding: 0 11px
+    transition: all 0.2s ease-in-out
+
+    &:hover
+      color: $color-red
 </style>
 
 <style>

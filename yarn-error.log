@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js add ug-plain-loader
+  /usr/local/Cellar/node/9.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js dev
 
 PATH: 
   /Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/opt/gettext/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/opt/gettext/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin
@@ -31,8 +31,10 @@ npm manifest:
       "dependencies": {
           "@kazupon/vue-i18n-loader": "^0.3.0",
           "@nuxtjs/axios": "^5.5.2",
+          "@nuxtjs/style-resources": "^0.1.2",
           "cookieparser": "^0.1.0",
           "css-loader": "^2.1.1",
+          "element-ui": "^2.9.1",
           "gsap": "^2.1.3",
           "js-cookie": "^2.2.0",
           "moment": "^2.24.0",
@@ -45,6 +47,7 @@ npm manifest:
           "postcss-nested": "^4.1.2",
           "postcss-responsive-type": "^1.0.0",
           "pug": "^2.0.3",
+          "pug-plain-loader": "^1.0.0",
           "sass-loader": "^7.1.0",
           "sass-resources-loader": "^2.0.1",
           "vue-awesome": "^3.5.3",
@@ -924,6 +927,14 @@ Lockfile:
       consola "^2.5.6"
       http-proxy-middleware "^0.19.1"
   
+  "@nuxtjs/style-resources@^0.1.2":
+    version "0.1.2"
+    resolved "https://registry.yarnpkg.com/@nuxtjs/style-resources/-/style-resources-0.1.2.tgz#6d90637611d3a445158224c34e42ec5769e13aaa"
+    dependencies:
+      consola "^2.4.0"
+      glob-all "^3.1.0"
+      sass-resources-loader "^2.0.0"
+  
   "@nuxtjs/youch@^4.2.3":
     version "4.2.3"
     resolved "https://registry.yarnpkg.com/@nuxtjs/youch/-/youch-4.2.3.tgz#36f8b22df5a0efaa81373109851e1d857aca6bed"
@@ -1404,6 +1415,12 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
   
+  async-validator@~1.8.1:
+    version "1.8.5"
+    resolved "https://registry.yarnpkg.com/async-validator/-/async-validator-1.8.5.tgz#dc3e08ec1fd0dddb67e60842f02c0cd1cec6d7f0"
+    dependencies:
+      babel-runtime "6.x"
+  
   async@^2.1.4, async@^2.3.0:
     version "2.6.2"
     resolved "https://registry.yarnpkg.com/async/-/async-2.6.2.tgz#18330ea7e6e313887f5d2f2a904bac6fe4dd5381"
@@ -1469,6 +1486,10 @@ Lockfile:
       eslint-scope "3.7.1"
       eslint-visitor-keys "^1.0.0"
   
+  babel-helper-vue-jsx-merge-props@^2.0.0:
+    version "2.0.3"
+    resolved "https://registry.yarnpkg.com/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-2.0.3.tgz#22aebd3b33902328e513293a8e4992b384f9f1b6"
+  
   babel-loader@^8.0.6:
     version "8.0.6"
     resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.0.6.tgz#e33bdb6f362b03f4bb141a0c21ab87c501b70dfb"
@@ -1478,7 +1499,7 @@ Lockfile:
       mkdirp "^0.5.1"
       pify "^4.0.1"
   
-  babel-runtime@^6.26.0:
+  babel-runtime@6.x, babel-runtime@^6.26.0:
     version "6.26.0"
     resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
     dependencies:
@@ -2109,7 +2130,7 @@ Lockfile:
       parseurl "~1.3.3"
       utils-merge "1.0.1"
   
-  consola@^2.3.0, consola@^2.5.6, consola@^2.6.0, consola@^2.6.1, consola@^2.6.2:
+  consola@^2.3.0, consola@^2.4.0, consola@^2.5.6, consola@^2.6.0, consola@^2.6.1, consola@^2.6.2:
     version "2.7.1"
     resolved "https://registry.yarnpkg.com/consola/-/consola-2.7.1.tgz#3f7f7c53eb44362240c3aee41b9bb2641d5ca32e"
   
@@ -2532,6 +2553,10 @@ Lockfile:
     version "0.1.3"
     resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   
+  deepmerge@^1.2.0:
+    version "1.5.2"
+    resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
+  
   deepmerge@^3.2.0:
     version "3.2.0"
     resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-3.2.0.tgz#58ef463a57c08d376547f8869fdc5bcee957f44e"
@@ -2692,6 +2717,17 @@ Lockfile:
   electron-to-chromium@^1.3.137:
     version "1.3.139"
     resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.139.tgz#17a149701d934bbb91d2aa4ae09e5270c38dc0ff"
+  
+  element-ui@^2.9.1:
+    version "2.9.1"
+    resolved "https://registry.yarnpkg.com/element-ui/-/element-ui-2.9.1.tgz#a05f2e76023d529ba0dfa2d03ae16e5134b20c4e"
+    dependencies:
+      async-validator "~1.8.1"
+      babel-helper-vue-jsx-merge-props "^2.0.0"
+      deepmerge "^1.2.0"
+      normalize-wheel "^1.0.1"
+      resize-observer-polyfill "^1.5.0"
+      throttle-debounce "^1.0.1"
   
   elliptic@^6.0.0:
     version "6.4.1"
@@ -3361,6 +3397,13 @@ Lockfile:
     dependencies:
       assert-plus "^1.0.0"
   
+  glob-all@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/glob-all/-/glob-all-3.1.0.tgz#8913ddfb5ee1ac7812656241b03d5217c64b02ab"
+    dependencies:
+      glob "^7.0.5"
+      yargs "~1.2.6"
+  
   glob-parent@^3.1.0:
     version "3.1.0"
     resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-3.1.0.tgz#9e6af6299d8d3bd2bd40430832bd113df906c5ae"
@@ -3374,7 +3417,7 @@ Lockfile:
     dependencies:
       is-glob "^4.0.1"
   
-  glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@~7.1.1:
+  glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@~7.1.1:
     version "7.1.4"
     resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
     dependencies:
@@ -4455,6 +4498,10 @@ Lockfile:
     version "0.0.8"
     resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
   
+  minimist@^0.1.0:
+    version "0.1.0"
+    resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.1.0.tgz#99df657a52574c21c9057497df742790b2b4c0de"
+  
   minimist@^1.1.3, minimist@^1.2.0:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
@@ -4732,6 +4779,10 @@ Lockfile:
   normalize-url@^3.0.0:
     version "3.3.0"
     resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
+  
+  normalize-wheel@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/normalize-wheel/-/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
   
   npm-bundled@^1.0.1:
     version "1.0.6"
@@ -5861,6 +5912,12 @@ Lockfile:
       pug-error "^1.3.2"
       token-stream "0.0.1"
   
+  pug-plain-loader@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/pug-plain-loader/-/pug-plain-loader-1.0.0.tgz#cef2a984c90251882109ec2d417a6b433aa6b42a"
+    dependencies:
+      loader-utils "^1.1.0"
+  
   pug-runtime@^2.0.4:
     version "2.0.4"
     resolved "https://registry.yarnpkg.com/pug-runtime/-/pug-runtime-2.0.4.tgz#e178e1bda68ab2e8c0acfc9bced2c54fd88ceb58"
@@ -6186,6 +6243,10 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   
+  resize-observer-polyfill@^1.5.0:
+    version "1.5.1"
+    resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  
   resolve-from@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-1.0.1.tgz#26cbfe935d1aeeeabb29bc3fe5aeb01e93d44226"
@@ -6311,7 +6372,7 @@ Lockfile:
       glob "^7.1.1"
       loader-utils "^1.0.4"
   
-  sass-resources-loader@^2.0.1:
+  sass-resources-loader@^2.0.0, sass-resources-loader@^2.0.1:
     version "2.0.1"
     resolved "https://registry.yarnpkg.com/sass-resources-loader/-/sass-resources-loader-2.0.1.tgz#c8427f3760bf7992f24f27d3889a1c797e971d3a"
     dependencies:
@@ -6886,6 +6947,10 @@ Lockfile:
       async "^2.3.0"
       loader-runner "^2.3.0"
       loader-utils "^1.1.0"
+  
+  throttle-debounce@^1.0.1:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-1.1.0.tgz#51853da37be68a155cb6e827b3514a3c422e89cd"
   
   through2@^2.0.0:
     version "2.0.5"
@@ -7597,6 +7662,12 @@ Lockfile:
       y18n "^3.2.1"
       yargs-parser "^5.0.0"
   
+  yargs@~1.2.6:
+    version "1.2.6"
+    resolved "https://registry.yarnpkg.com/yargs/-/yargs-1.2.6.tgz#9c7b4a82fd5d595b2bf17ab6dcc43135432fe34b"
+    dependencies:
+      minimist "^0.1.0"
+  
   yargs@~3.10.0:
     version "3.10.0"
     resolved "https://registry.yarnpkg.com/yargs/-/yargs-3.10.0.tgz#f7ee7bd857dd7c1d2d38c0e74efbd681d1431fd1"
@@ -7607,14 +7678,16 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: https://registry.yarnpkg.com/ug-plain-loader: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:65019:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:132430:22)
-      at Request.emit (events.js:180:13)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:133413:10)
-      at Request.emit (events.js:180:13)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:133333:12)
-      at Object.onceWrapper (events.js:272:13)
-      at IncomingMessage.emit (events.js:185:15)
-      at endReadableNT (_stream_readable.js:1101:12)
-      at process._tickCallback (internal/process/next_tick.js:114:19)
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c nuxt
+  Directory: /Users/dosya/Projects/promo-portal
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:180:13)
+      at maybeClose (internal/child_process.js:936:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)

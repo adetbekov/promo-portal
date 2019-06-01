@@ -1,6 +1,6 @@
 module.exports = {
     vueI18n: {
-        fallbackLocale: "en",
+        fallbackLocale: "ru",
         silentTranslationWarn: true
     },
     locales: [{
@@ -8,11 +8,11 @@ module.exports = {
             iso: "ru-RU",
             name: "Русский"
         },
-        {
-            code: "en",
-            iso: "en-US",
-            name: "English"
-        },
+        // {
+        //     code: "en",
+        //     iso: "en-US",
+        //     name: "English"
+        // },
         {
             code: "kz",
             iso: "kz-KZ",
