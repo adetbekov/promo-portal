@@ -6,11 +6,13 @@ ssr-loading(v-cloak)
           Container.container
             Navbar
         nuxt.content
+        Footer
 </template>
 
 
 <script>
 import Navbar from '~/components/bars/Navbar'
+import Footer from '~/components/bars/Footer'
 import SSRLoading from "~/components/toolkit/SSRLoading"
 import Container from "~/components/toolkit/Container"
 
@@ -18,7 +20,8 @@ export default {
   components: {
     SsrLoading: SSRLoading,
     Container: Container,
-    Navbar: Navbar
+    Navbar: Navbar,
+    Footer: Footer
   }
 }
 </script>
