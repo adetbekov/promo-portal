@@ -27,6 +27,9 @@ module.exports = {
         '@nuxtjs/style-resources', ["nuxt-i18n", require("./i18n/config")],
         "nuxt-mq"
     ],
+    router: {
+        // middleware: ["launched"]
+    },
     mq: {
         defaultBreakpoint: 'default',
         breakpoints: {
@@ -37,8 +40,8 @@ module.exports = {
         }
     },
     axios: {
-        host: "https://api.rglservice.kz",
-        prefix: "/v2/180713142003"
+        host: "http://api.rglservice.kz",
+        prefix: "/v2/190604120714"
     },
     build: {
         // postcss: [
