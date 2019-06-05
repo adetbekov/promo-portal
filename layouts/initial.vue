@@ -17,26 +17,23 @@ export default {
 </script>
 
 
-<style lang="sass">
-// @import "assets/styles/fonts/lato.sass"
+<style lang="sass" scoped>
+@import "assets/styles/fonts/bebas-neue.sass"
 
 .disclaimer-layout
-  font-family: "Lato", Helvetica, sans-serif !important
-  font-weight: 400
-  color: #2c3e50
+  font-family: "Bebas Neue", Roboto, sans-serif !important
+  font-weight: regular
+  height: 100vh!important
+  color: $color-text-black
   padding: 0
   margin: 0
   height: 100%
   display: flex
   align-items: stretch
 
-section
-  width: 100%
-  max-height: 100vh
-  background-color: #fafafa
-
   .content
-    overflow-y: auto
+    width: 100%
+    height: 100%
 
 </style>
 

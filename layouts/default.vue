@@ -27,7 +27,7 @@ export default {
 </script>
 
 
-<style lang="sass" scoped>
+<style lang="sass">
 @import "assets/styles/fonts/bebas-neue.sass"
 
 .default-layout
@@ -69,5 +69,4 @@ section
   [v-cloak] {
     display: none;
   }
-
 </style>

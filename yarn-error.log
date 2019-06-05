@@ -7679,7 +7679,7 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 1
+  Exit signal: SIGSEGV
   Command: sh
   Arguments: -c nuxt
   Directory: /Users/dosya/Projects/promo-portal
