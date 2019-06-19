@@ -25,13 +25,13 @@ export default {
 
 
 <style lang="sass">
-@import "assets/styles/fonts/bebas-neue.sass"
+@import "assets/styles/fonts/ropa-sans.sass"
 
 .default-layout
-  font-family: "Bebas Neue", Roboto, sans-serif !important
+  font-family: "Ropa Sans", Roboto, sans-serif !important
   font-weight: regular
   font-size: 22px
-  color: $color-text-black
+  color: $color-text-white
   padding: 0
   margin: 0
   height: 100%
@@ -50,10 +50,10 @@ section
     width: 100%
     padding: 3px 0px
     margin: 0
-    color: gray
-    background-color: white
+    background-color: $color-green-primary
     box-sizing: border-box
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    border-radius: 0 0 15px 15px  
 
     .container
       display: flex
