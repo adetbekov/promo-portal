@@ -40,8 +40,7 @@ module.exports = {
         }
     },
     axios: {
-        host: "http://api.rglservice.kz",
-        prefix: "/v2/190604120714"
+        baseURL: "https://cors-anywhere.herokuapp.com/api.rglservice.kz/v2/190604120714"
     },
     build: {
         // postcss: [
@@ -50,6 +49,7 @@ module.exports = {
         //     require("postcss-hexrgba")(),
         //     require("autoprefixer")()
         // ],
+        vendor: ['axios'],
         extend(config, { isDev, isClient, isServer }) {
             if (isDev && isClient) {
                 config.module.rules.push({

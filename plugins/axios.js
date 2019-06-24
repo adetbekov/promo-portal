@@ -13,11 +13,13 @@ export default function({ store, $axios, redirect }) {
     })
 
     $axios.interceptors.request.use(request => {
-        //   const token = store.getters["auth/getToken"]
-        //   if (token) {
-        //     request.headers.common["Authorization"] = `JWT ${token}`
-        //   }
-        //   return request
+        const token = store.getters["auth/getToken"]
+        if (token) {
+            request.headers.common["Authorization"] = `JWT ${token}`
+        }
+        request.headers.common["Content-Type"] = "application/x-www-form-urlencoded"
+        request.headers.common["API-Key"] = ""
 
+        return request
     })
 }

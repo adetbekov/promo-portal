@@ -11,15 +11,16 @@
   #locales
     a
       // display: inline-block
+      text-transform: uppercase
       user-select: none
       margin: 0
       font-weight: regular
       text-decoration: none
-      color: $color-text-black
+      color: $color-text-white
       padding: 0 20px 0 0
       transition: all 0.2s ease-in-out
 
       &:hover
-        color: $color-red
+        text-decoration: underline
 
 </style>
