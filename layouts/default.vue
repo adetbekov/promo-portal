@@ -43,20 +43,18 @@ export default {
 
 section
   width: 100%
-  max-height: 100vh
 
   .content
-    overflow-y: auto
-
-    
+    padding-top: 110px;
   .navbar
     width: 100%
     padding: 3px 0px
     margin: 0
     background-color: $color-green-primary
-    box-sizing: border-box
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
     border-radius: 0 0 15px 15px  
+    position: absolute;
+    top: 0;
 
     .container
       display: flex

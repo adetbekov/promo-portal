@@ -14,7 +14,6 @@ export default {
   margin-right: auto
   margin-left: auto
   width: 80%
-  height: 100%
 
   &.mobile
     width: 100%
@@ -24,6 +23,5 @@ export default {
   
   &.laptop
     width: 85%
-  
 </style>
 
