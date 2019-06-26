@@ -34,7 +34,7 @@ export default {
   color: $color-text-white
   padding: 0
   margin: 0
-  height: 100%
+  min-height: 100vh
   display: flex
   align-items: stretch
 

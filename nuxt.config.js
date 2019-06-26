@@ -38,6 +38,7 @@ module.exports = {
             laptop: 1250,
             desktop: Infinity
         }
+
     },
     axios: {
         baseURL: "https://cors-anywhere.herokuapp.com/api.rglservice.kz/v2/190604120714"
