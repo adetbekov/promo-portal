@@ -25,8 +25,9 @@ module.exports = {
     langDir: null,
     differentDomains: false,
     detectBrowserLanguage: {
-        cookieKey: "redirected",
-        useCookie: true
+        cookieKey: 'i18n_redirected',
+        useCookie: true,
+        alwaysRedirect: true
     },
     seo: true,
     vuex: {
