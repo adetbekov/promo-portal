@@ -1,11 +1,11 @@
 <template lang="pug">
 ssr-loading(v-cloak)
-  .default-layout(:class="(localePath('mycabinet') == _.split($nuxt.$route.name, '-', -1)[0]) ? 'cabinet-white' : ''")
+  .default-layout(:class="(localePath('mycabinet') == $nuxt.$route.path) ? 'cabinet-white' : ''")
       section
         .navbar
           Container.container
             Navbar
-            p {{ $nuxt.$route.path }}
+            //- p {{ split($nuxt.$route.name, '-', -1)[0] }}
         nuxt.content
         Footer
 </template>
@@ -16,7 +16,7 @@ import Navbar from '~/components/bars/Navbar'
 import Footer from '~/components/bars/Footer'
 import SSRLoading from "~/components/toolkit/SSRLoading"
 import Container from "~/components/toolkit/Container"
-import _ from "lodash"
+// import split from 'lodash.split'
 
 export default {
   

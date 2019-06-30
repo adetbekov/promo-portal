@@ -4,18 +4,22 @@ div
     mq-layout(mq="laptop+")
     div.prize-container
         PrizeCard(v-for="prize in prizes", :key="prize.id", :codeAmount="prize.codeAmount", :prizePrice="prize.prizePrice")
+    div.certificate-container
+      CertificateCard(v-for="certificate in certificates", :key="certificate.id", :amount="certificate.amount")
 </template>
 
 <script>
 
 import Container from "~/components/toolkit/Container";
 import PrizeCard from "~/components/PrizeCard";
+import CertificateCard from "~/components/CertificateCard";
 import axios from "axios";
 
 export default {
   components: {
     Container,
-    PrizeCard
+    PrizeCard,
+    CertificateCard
   },
   data: () => ({
     prizes: [
@@ -35,6 +39,20 @@ export default {
         codeAmount: "200",
         prizePrice: "90000"
       }
+    ],
+    certificates: [
+      {
+        amount: "5000"
+      },
+      {
+        amount: "10000"
+      },
+      {
+        amount: "10000"
+      },
+      {
+        amount: "30000"
+      },
     ]
   })
 };
@@ -46,4 +64,9 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between
+.certificate-container
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+  margin: 30px 0;
 </style>
