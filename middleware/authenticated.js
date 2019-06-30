@@ -1,5 +1,12 @@
 export default function({ app, store, redirect }) {
-    if (!store.getters["auth/isAuthenticated"]) {
+    let authenticated = store.getters["auth/isAuthenticated"]
+    if (!authenticated) {
         return redirect("/main/login")
+    }
+
+    if (authenticated) {
+        if (!store.getters["auth/getUser"]) {
+            store.dispatch('auth/set_user')
+        }
     }
 }
