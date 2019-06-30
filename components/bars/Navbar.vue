@@ -28,7 +28,6 @@ div.cont
         n-link(:to="localePath('winners')") {{ $t("rating") }}
         n-link(:to="localePath('mycabinet')") {{ $t("cabinet") }}
         Locale.locale
-        p {{ $store.getters["auth/getUser"] }}
     mq-layout(mq="laptop+").number
         span {{ $t("hotline") }}
         p 8 800 070 1971

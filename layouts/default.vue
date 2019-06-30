@@ -1,6 +1,6 @@
 <template lang="pug">
 ssr-loading(v-cloak)
-  .default-layout(:class="(localePath('cabinet') == $nuxt.$route.path) ? 'cabinet-white' : ''")
+  .default-layout(:class="(localePath('mycabinet') == $nuxt.$route.path) ? 'cabinet-white' : ''")
       section
         .navbar
           Container.container
