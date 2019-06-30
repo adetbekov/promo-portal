@@ -26,19 +26,18 @@ Container.cabinet
             div
                 p {{ $t("balance", { codes: "176" }) }}
                 p.little {{ $t("overall") }}
-        .user-info
-            p {{ user.first_name }} {{ user.last_name }}
-            p.little {{ user.email }}
-            p.little {{ user.phone }}
+        .user-info(v-if="user")
+            p {{ getUser.first_name }} {{ getUser.last_name }}
+            p.little {{ getUser.email }}
+            p.little {{ getUser.phone }}
     .code
         input(type="text", :placeholder="$t('code')", v-model="input_code", @keyup.13="register_code()")
         button(@click="register_code()") {{$t("enter_code")}}
 
-    p {{ $store.getters["auth/getToken"] }}
     div.tabs
         n-link(:to="localePath('mycabinet')", class="left" exact) {{ $t("take_prizes") }}
-        n-link(:to="localePath('mycabinet-archive')", class="center") {{ $t("archive") }}
-        n-link(:to="localePath('mycabinet-archive')" class="right") {{ $t("archive") }}
+        n-link(:to="localePath('mycabinet-archiveone')", class="center") {{ $t("archive") }}
+        n-link(:to="localePath('mycabinet-archivetwo')" class="right") {{ $t("archive") }}
     nuxt-child(keep-alive)  
 </template>
 
@@ -54,11 +53,13 @@ export default {
     },
     computed: {
         user(){
-            let user = this.$store.dispatch('auth/set_user')
-            if (!user) {
+            return this.$store.getters["auth/getUser"]
+        },
+        getUser(){
+            if (!this.user) {
                 this.$store.dispatch('auth/set_user')
             }
-            return user
+            return this.user
         }
     },
     beforeMount(){
