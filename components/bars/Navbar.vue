@@ -23,20 +23,21 @@ div.cont
     li.logo
         Logo
     mq-layout(mq="tablet+").links.scroll
-        n-link(:to="localePath('rules')") {{ $t("rules") }}
-        n-link(:to="localePath('gifts')") {{ $t("gifts") }}
-        n-link(:to="localePath('rating')") {{ $t("rating") }}
-        n-link(:to="localePath('cabinet')") {{ $t("cabinet") }}
+        n-link(:to="localePath('main')") {{ $t("rules") }}
+        n-link(:to="localePath('main')") {{ $t("gifts") }}
+        n-link(:to="localePath('winners')") {{ $t("rating") }}
+        n-link(:to="localePath('mycabinet')") {{ $t("cabinet") }}
         Locale.locale
+        p {{ $store.getters["auth/getUser"] }}
     mq-layout(mq="laptop+").number
         span {{ $t("hotline") }}
         p 8 800 070 1971
   mq-layout(:mq="['mobile']").menu.small
     li.links.scroll.mobile
-      n-link(:to="localePath('rules')") {{ $t("rules") }}
-      n-link(:to="localePath('gifts')") {{ $t("gifts") }}
-      n-link(:to="localePath('rating')") {{ $t("rating") }}
-      n-link(:to="localePath('cabinet')") {{ $t("cabinet") }}
+      n-link(:to="localePath('main')") {{ $t("rules") }}
+      n-link(:to="localePath('main')") {{ $t("gifts") }}
+      n-link(:to="localePath('winners')") {{ $t("rating") }}
+      n-link(:to="localePath('mycabinet')") {{ $t("cabinet") }}
       Locale.locale
 </template>
 
@@ -88,6 +89,9 @@ export default {
 
     &:hover
       text-decoration: underline
+
+  .nuxt-link-active
+    color: $color-text-yellow
   
   .number
     min-width: 120px

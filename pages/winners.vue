@@ -18,7 +18,7 @@
         div.tabs
             n-link(:to="localePath('winners-guaranteed')", class="left") {{ $t("guaranteed") }}
             n-link(:to="localePath('winners')", class="center" exact) {{ $t("certificates") }}
-            n-link(:to="localePath('winners-main')" class="right") {{ $t("main") }}
+            n-link(:to="localePath('winners-mainprizes')" class="right") {{ $t("main") }}
         nuxt-child(keep-alive)  
 
 </template>
@@ -42,6 +42,7 @@ export default {
         padding-top: 20px
 
     .tabs
+        margin-top: 15px
         max-width: 600px
         display: flex
         flex-direction: row

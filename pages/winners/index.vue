@@ -1,7 +1,8 @@
 <template lang="pug">
 div
-    p index
+    br
     GiftsTable
+    br
 </template>
 
 <script>
