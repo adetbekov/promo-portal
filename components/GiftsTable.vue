@@ -44,6 +44,7 @@
       align="center">
     </el-table-column>
   </el-table>
+  <p>{{rating_}}</p>
 </div>
 </template>
 
@@ -110,7 +111,7 @@ import 'element-ui/lib/theme-chalk/index.css'
         }
     },
     mounted() {
-        this.$axios.get('/r/info/winners/list?page=1&pageSize=10').then(response => {
+        this.$axios.get('r/info/winners/list?page=1&pageSize=10').then(response => {
             this.rating_ = response.data
         })
     },
