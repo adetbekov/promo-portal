@@ -1,10 +1,16 @@
 export const actions = {
     nuxtServerInit: ({ dispatch }, { req }) =>
-        Promise.all([dispatch("countdown/serverInit", { req })]),
+        Promise.all([
+            dispatch("countdown/serverInit", { req }),
+            dispatch("auth/serverInit", { req })
+        ]),
     nuxtClientInit: ({ dispatch }, { app }) => {
         Promise.all([
             dispatch("countdown/clientInit"),
-            //dispatch("user/clientInit", { app })
+            dispatch("auth/clientInit")
         ])
     }
 }
+export const state = () => ({
+    authURL: "http://localhost:8000",
+})

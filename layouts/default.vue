@@ -1,6 +1,6 @@
 <template lang="pug">
 ssr-loading(v-cloak)
-  .default-layout
+  .default-layout(:class="(localePath('cabinet') == $nuxt.$route.path) ? 'cabinet-white' : ''")
       section
         .navbar
           Container.container
@@ -17,6 +17,7 @@ import SSRLoading from "~/components/toolkit/SSRLoading"
 import Container from "~/components/toolkit/Container"
 
 export default {
+  
   components: {
     SsrLoading: SSRLoading,
     Container: Container,
@@ -32,6 +33,9 @@ export default {
 
 .default-layout
   font-family: "Ropa Sans", Roboto, sans-serif !important
+  background: linear-gradient(180deg, #4F955D 0%, #086018 100%)
+  background-repeat: no-repeat
+  background-attachment: fixed
   font-weight: regular
   font-size: 22px
   color: $color-text-white
@@ -45,7 +49,7 @@ section
   width: 100%
 
   .content
-    padding-top: 110px;
+    padding-top: 110px
   .navbar
     width: 100%
     padding: 3px 0px
@@ -53,14 +57,16 @@ section
     background-color: $color-green-primary
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
     border-radius: 0 0 15px 15px  
-    position: absolute;
-    top: 0;
+    position: absolute
+    top: 0
 
     .container
       display: flex
       flex-direction: row
       justify-content: between
 
+.cabinet-white
+  background: linear-gradient(180deg, #F8F8F8 0%, #DFDFDF 100%)
 </style>
 
 <style>

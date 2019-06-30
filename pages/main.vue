@@ -47,6 +47,7 @@ Container
 			div.rules-2
 			div.rules-3
 			div.rules-4
+
 </template>
 
 <script>
