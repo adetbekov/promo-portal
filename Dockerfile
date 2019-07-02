@@ -5,4 +5,4 @@ COPY . /promo-portal
 
 RUN [ -s 'node_modules' ] || yarn
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "build"]
