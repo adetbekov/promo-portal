@@ -3,6 +3,6 @@ ENV HOST 0.0.0.0
 WORKDIR /promo-portal
 COPY . /promo-portal
 RUN npm install nuxt
-RUN [ -s 'node_modules' ] || yarn
+RUN yarn
 
-CMD ["yarn", "build"]
+CMD ["yarn", "dev"]
