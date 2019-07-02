@@ -5,4 +5,4 @@ COPY . /promo-portal
 RUN npm install nuxt
 RUN yarn
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "dev", "--no-lock"]
