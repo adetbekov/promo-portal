@@ -22,6 +22,7 @@ export const actions = {
     set_user: async({ commit, rootState }) => {
         let { data } = await axios.get(`${rootState.authURL}/api/accounts/current`)
         commit('SET_USER', data)
+        console.log("welcome to hell", data)
     },
     remove: ({ commit }) => {
         commit("REMOVE")

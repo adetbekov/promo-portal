@@ -1,4 +1,5 @@
 const pkg = require('./package')
+import webpack from 'webpack'
 const nodeExternals = require("webpack-node-externals")
 
 module.exports = {
@@ -45,6 +46,12 @@ module.exports = {
         credentials: false
     },
     build: {
+        plugins: [
+            new webpack.ProvidePlugin({
+                '_': 'lodash'
+                    // ...etc.
+            })
+        ],
         // postcss: [
         //     require("postcss-nested")(),
         //     require("postcss-responsive-type")(),

@@ -1,6 +1,6 @@
 <template lang="pug">
 ssr-loading(v-cloak)
-  .default-layout(:class="(localePath('mycabinet') == $nuxt.$route.path) ? 'cabinet-white' : ''")
+  .default-layout(:class="{'cabinet-white' : isCabinet}")
       section
         .navbar
           Container.container
@@ -15,14 +15,19 @@ import Navbar from '~/components/bars/Navbar'
 import Footer from '~/components/bars/Footer'
 import SSRLoading from "~/components/toolkit/SSRLoading"
 import Container from "~/components/toolkit/Container"
+import _ from "lodash"
 
 export default {
-  
   components: {
     SsrLoading: SSRLoading,
     Container: Container,
     Navbar: Navbar,
     Footer: Footer
+  },
+  computed:{
+    isCabinet(){
+      return  this.localePath("mycabinet") == `/${_.split(this.$nuxt.$route.path, '/')[1]}/`
+    }
   }
 }
 </script>
