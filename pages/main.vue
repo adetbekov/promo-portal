@@ -47,7 +47,7 @@ Container
 			div.rules-2
 			div.rules-3
 			div.rules-4
-
+	nuxt-child(keep-alive)
 </template>
 
 <script>
