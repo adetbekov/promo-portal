@@ -8,4 +8,4 @@ WORKDIR /app
 RUN sudo yarn add nuxt
 RUN sudo yarn
 
-CMD ["sudo", "yarn", "build"]
+CMD ["sudo", "yarn", "dev"]
