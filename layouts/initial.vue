@@ -18,7 +18,7 @@ export default {
 
 
 <style lang="sass" scoped>
-@import "assets/styles/fonts/bebas-neue.sass"
+// @import "assets/styles/fonts/bebas-neue.sass"
 
 .disclaimer-layout
   font-family: "Bebas Neue", Roboto, sans-serif !important
