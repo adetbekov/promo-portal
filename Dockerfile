@@ -13,4 +13,4 @@ WORKDIR /app
 
 RUN yarn
 
-CMD ["sudo", "yarn", "dev"]
+CMD ["sudo", "yarn", "build"]
