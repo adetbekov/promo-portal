@@ -21,7 +21,8 @@ module.exports = {
     plugins: [
         "~/plugins/axios",
         { src: "~/plugins/nuxt-client-init.js", ssr: false },
-        '@/plugins/element-ui'
+        '@/plugins/element-ui',
+        { src: "~/plugins/vue-glide.js", ssr: false }
     ],
     modules: [
         '@nuxtjs/axios',
