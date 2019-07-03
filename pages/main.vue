@@ -34,29 +34,53 @@ Container
 				img.case-4-img(src="~assets/images/suitcase4.png")
 		div.lenta
 		div.rules-header
-			img(src="~assets/images/animated-arrow-left.png", alt="alt")
+			img(src="~assets/images/animated-arrow-right.png")
 			p правила участия в проекте
-			img(src="~assets/images/animated-arrow-right.png", alt="alt")
+			img(src="~assets/images/animated-arrow-left.png")
 		div.rules
-			div.rules-1
-				div.rules-panel
+			div.rule.rule-1
+				div.rule-panel
 					div.circle
 						img.number(src="~assets/images/1.png")
 					img.rules-icon-1(src="~assets/images/bm-light.png")
-				p покупай продукцию <br/>белый медведь <br/>в сети magnum
-			div.rules-2
-			div.rules-3
-			div.rules-4
+				p.rules-text покупай продукцию <br/>белый медведь <br/>в сети magnum
+			div.rule.rule-2
+				div.rule-panel
+					div.circle
+						img.number(src="~assets/images/2.png")
+					img.rules-icon-2(src="~assets/images/rules-cheque.png")
+				p.rules-text на кассе получай<br/> код в чеке за каждый<br/> приобретённый продукт
+			div.rule.rule-3
+				div.rule-panel
+					div.circle
+						img.number(src="~assets/images/3.png")
+					img.rules-icon-3(src="~assets/images/rules-phone.png")
+				p.rules-text копи и регистрируй<br/> коды на сайте или<br/> через sms на номер 7102
+			div.rule.rule-4
+				div.rule-panel
+					div.circle
+						img.number(src="~assets/images/4.png")
+					img.rules-icon-4(src="~assets/images/rules-prize.png")
+				p.rules-text принимай участие в получении<br/> гарантированных, ежедневных,<br/> и еженедельных подарков
+		div.bears-carousel-header
+			img(src="~assets/images/animated-arrow-right.png")
+			p КУПИ любую продукцию Белый Медведь и ищи код в чеке
+			img(src="~assets/images/animated-arrow-left.png")
+		vue-glide
+			vue-glide-slide
 	nuxt-child(keep-alive)
 </template>
 
 <script>
 import Container from "~/components/toolkit/Container";
 import axios from "axios";
+import { Glide, GlideSlide } from 'vue-glide-js';
 
 export default {
   components: {
-    Container
+		Container,
+		[Glide.name]: Glide,
+    [GlideSlide.name]: GlideSlide
   },
   async data() {
     let { data } = await axios.get(`http://worldclockapi.com/api/json/est/now`);
@@ -222,6 +246,7 @@ export default {
 		display: flex;
 		justify-content: center;
 		margin-top: 169px;
+		align-items: center;
 		img
 			width: 128px;
 			height: 42px;
@@ -238,7 +263,9 @@ export default {
 	.rules
 		display: flex;
 		justify-content: space-between;
-	.rules-panel
+		height: 400px;
+		margin-top: -25px;
+	.rule-panel
 		display: flex;
 		align-items: flex-end;
 	.circle
@@ -249,9 +276,47 @@ export default {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		z-index: 1;
+	.rules-text
+		text-align: center;
+		margin-top: 23px;
+	.rule
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
 	.rules-icon-1
 		width: 90px;
 		height: 248px;
-
-
+		margin-left: -20px;
+	.rules-icon-2
+		width: 258px;
+		height: 217.87px;
+		margin-left: -106px;
+	.rules-icon-3
+		width: 250.88px;
+		height: 249.62px;
+		margin-left: -75px;
+	.rules-icon-4
+		width: 306.41px;
+		height: 288.12px;
+		margin-left: -85px;
+	.bears-carousel-header
+		display: flex;
+		justify-content: center;
+		margin-top: 82px;
+		// align-items: center;
+		img
+			width: 128px;
+			height: 42px;
+		p
+			font-size: 40px;
+			line-height: 53px;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			text-transform: uppercase;
+			color: $color-text-white;
+			margin-right: 60px;
+			margin-left: 60px;
 </style>
