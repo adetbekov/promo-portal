@@ -5,7 +5,6 @@ ENV NUXT_PORT = 3000
 COPY . /app
 WORKDIR /app
 
-RUN sudo npm install nuxt
 RUN sudo yarn add nuxt
 RUN sudo yarn
 
