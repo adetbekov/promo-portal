@@ -2,10 +2,14 @@
 div
     br
     mq-layout(mq="laptop+")
-    div.prize-container
-        PrizeCard(v-for="prize in prizes", :key="prize.id", :codeAmount="prize.codeAmount", :prizePrice="prize.prizePrice")
-    div.certificate-container
-      CertificateCard(v-for="certificate in certificates", :key="certificate.id", :amount="certificate.amount")
+      h1 Обменивай коды на денежные подарки
+      div.prize-container
+          PrizeCard(v-for="prize in prizes", :key="prize.id", :codeAmount="prize.codeAmount", :prizePrice="prize.prizePrice")
+      br
+      br
+      h1 сейчас ты участвуешь в розыгрыше следующих подарков
+      div.certificate-container
+        CertificateCard(v-for="certificate in certificates", :key="certificate.id", :amount="certificate.amount")
 </template>
 
 <script>
@@ -61,12 +65,19 @@ export default {
 .container
   width: 70%
 .prize-container
-  display: flex;
-  flex-direction: row;
+  display: flex
+  flex-direction: row
   justify-content: space-between
 .certificate-container
-  display: flex;
-  flex-direction: row;
+  display: flex
+  flex-direction: row
   justify-content: space-between
-  margin: 30px 0;
+  margin: 30px 0
+</style>
+
+<style lang="sass" scoped>
+h1
+  font-size: 22px
+  text-transform: uppercase
+  margin-bottom: 15px
 </style>
