@@ -16,9 +16,6 @@
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button" @click="$emit('close')">
-                OK
-              </button>
             </slot>
           </div>
         </div>
@@ -101,5 +98,4 @@
 <style lang="sass" scoped>
 @import "assets/styles/fonts/ropa-sans.sass"
 </style>
-
 

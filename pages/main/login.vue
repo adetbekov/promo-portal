@@ -20,9 +20,9 @@
     div(slot="header")
       span Авторизация
     div(slot="body")
-      input(type="phone", :placeholder="$t('phone')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="phone", @keyup.13="login()", autofocus)
-      input(type="password", :placeholder="$t('password')", v-model="password", @keyup.13="login()")
-      button(@click="login()") {{$t("login")}}
+      input(type="phone", :placeholder="$t('phone')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="phone", @keyup.13.prevent="login()", autofocus)
+      input(type="password", :placeholder="$t('password')", v-model="password", @keyup.13.prevent="login()")
+      button(@click.prevent="login()") {{$t("login")}}
       br
       n-link(:to="localePath('forgot')" id="forgot") {{ $t("forgot") }}
     div(slot="footer", class="footer-gray")

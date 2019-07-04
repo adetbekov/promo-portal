@@ -45,7 +45,7 @@ module.exports = {
 
     },
     axios: {
-        baseURL: "http://api.rglservice.kz/v2/190604120714",
+        baseURL: "https://cors-anywhere.herokuapp.com/api.rglservice.kz/v2/190604120714",
         credentials: false
     },
     build: {
