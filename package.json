@@ -38,6 +38,7 @@
         "sass-loader": "^7.1.0",
         "sass-resources-loader": "^2.0.1",
         "simple-table-vue": "^0.8.0",
+        "uuid": "^3.3.2",
         "vue-awesome": "^3.5.3",
         "vue-i18n": "^8.11.2",
         "vue-loader": "^15.7.0",

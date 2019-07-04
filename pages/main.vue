@@ -6,8 +6,7 @@ Container
 				img.deadlines(src="~assets/images/deadlines.png")
 			div.main-banner-center
 				div.main-banner-center-top
-					button.code-enter
-						span Введи код
+					n-link.code-enter(:to="localePath('mycabinet')") Введи код
 					p.send-sms-text или отправь смс на номер 7102
 					img.bm-flight(src="~assets/images/bm-flight.png", alt="И лети на юг")
 				div.main-banner-center-bottom
