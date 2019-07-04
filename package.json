@@ -17,6 +17,7 @@
         "@kazupon/vue-i18n-loader": "^0.3.0",
         "@nuxtjs/axios": "^5.5.2",
         "@nuxtjs/style-resources": "^0.1.2",
+        "awesome-mask": "^1.1.1",
         "cookieparser": "^0.1.0",
         "css-loader": "^2.1.1",
         "element-ui": "^2.9.1",

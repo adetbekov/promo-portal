@@ -22,11 +22,13 @@ module.exports = {
         "~/plugins/axios",
         { src: "~/plugins/nuxt-client-init.js", ssr: false },
         '@/plugins/element-ui',
+        { src: "~/plugins/maskedInput.js", ssr: false }
         // { src: "~/plugins/vue-glide.js", ssr: false }
     ],
     modules: [
         '@nuxtjs/axios',
-        '@nuxtjs/style-resources', ["nuxt-i18n", require("./i18n/config")],
+        '@nuxtjs/style-resources',
+        ["nuxt-i18n", require("./i18n/config")],
         "nuxt-mq"
     ],
     router: {
