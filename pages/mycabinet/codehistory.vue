@@ -1,15 +1,15 @@
 <template lang="pug">
     div
         br
-        codeHistoryTable
+        CodeHistoryTable
         br
 </template>
 
 <script>
-import codeHistoryTable from "~/components/codeHistoryTable"
+import CodeHistoryTable from "~/components/CodeHistoryTable"
 export default {
     components: {
-        codeHistoryTable
+        CodeHistoryTable
     }
 }
 </script>
