@@ -10,6 +10,7 @@ ENV HOST 0.0.0.0
 ENV PORT 3000
 COPY . /app
 WORKDIR /app
+RUN yarn add awesome-mask
 
 RUN yarn
 
