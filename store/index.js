@@ -12,5 +12,5 @@ export const actions = {
     }
 }
 export const state = () => ({
-    authURL: "http://92.53.66.206:8000",
+    authURL: "http://92.53.66.206",
 })
