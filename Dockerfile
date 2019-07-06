@@ -10,9 +10,9 @@ ENV HOST 0.0.0.0
 ENV PORT 3000
 COPY . /app
 WORKDIR /app
-RUN yarn add awesome-mask
-
 RUN yarn
+RUN yarn add awesome-mask
+RUN yarn add nuxt
 RUN yarn add global nuxt
 
-CMD ["yarn", "build"]
+CMD ["sudo", "yarn", "build"]
