@@ -18,9 +18,9 @@ WORKDIR /app
 
 # CMD ["yarn", "start"]
 
-RUN npm install
-RUN npm install awesome-mask
-RUN npm install nuxt
-RUN npm run build
+RUN sudo npm install
+RUN sudo npm install awesome-mask
+RUN sudo npm install nuxt
+RUN sudo npm run build
 
-CMD ["npm", "run", "start"]
+CMD ["sudo", "npm", "run", "start"]
