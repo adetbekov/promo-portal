@@ -13,5 +13,6 @@ WORKDIR /app
 RUN yarn add awesome-mask
 
 RUN yarn
+RUN yarn add global nuxt
 
-CMD ["sudo", "yarn", "build"]
+CMD ["yarn", "build"]
