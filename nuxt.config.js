@@ -27,8 +27,7 @@ module.exports = {
     ],
     modules: [
         '@nuxtjs/axios',
-        '@nuxtjs/style-resources',
-        ["nuxt-i18n", require("./i18n/config")],
+        '@nuxtjs/style-resources', ["nuxt-i18n", require("./i18n/config")],
         "nuxt-mq"
     ],
     router: {
@@ -72,12 +71,14 @@ module.exports = {
                     options: {
                         fix: true
                     }
-                }, {
-                    resourceQuery: /blockType=i18n/,
-                    type: 'javascript/auto',
-                    loader: '@kazupon/vue-i18n-loader'
                 })
             }
+
+            config.module.rules.push({
+                resourceQuery: /blockType=i18n/,
+                type: 'javascript/auto',
+                loader: '@kazupon/vue-i18n-loader'
+            })
 
             if (isServer) {
                 config.externals = [
