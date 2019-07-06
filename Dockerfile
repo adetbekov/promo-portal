@@ -14,4 +14,4 @@ RUN yarn add awesome-mask
 
 RUN yarn
 
-CMD ["sudo", "yarn", "dev"]
+CMD ["sudo", "yarn", "build"]
