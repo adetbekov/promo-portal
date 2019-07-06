@@ -14,5 +14,6 @@ RUN yarn
 RUN yarn add awesome-mask
 RUN yarn add nuxt
 RUN yarn add global nuxt
+RUN yarn build
 
-CMD ["sudo", "yarn", "build"]
+CMD ["yarn", "start"]
