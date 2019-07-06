@@ -1,6 +1,7 @@
 const pkg = require('./package')
 import webpack from 'webpack'
 const nodeExternals = require("webpack-node-externals")
+import TerserPlugin from 'terser-webpack-plugin'
 
 module.exports = {
     head: {
@@ -48,6 +49,15 @@ module.exports = {
         credentials: false
     },
     build: {
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    cache: true,
+                    parallel: false
+                })
+            ]
+        },
         plugins: [
             new webpack.ProvidePlugin({
                 '_': 'lodash'
