@@ -20,7 +20,7 @@
     div(slot="header")
       span Авторизация
     div(slot="body")
-      input(type="phone", :placeholder="$t('phone')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="phone", @keyup.13.prevent="login()", autofocus)
+      input(type="phone", :placeholder="$t('phone')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="phone", @keyup.13.prevent="login()", v-mask="'+9 999 999 9999'", autofocus)
       input(type="password", :placeholder="$t('password')", v-model="password", @keyup.13.prevent="login()")
       button(@click.prevent="login()") {{$t("login")}}
       br
@@ -32,10 +32,12 @@
 <script>
 import modal from "~/components/toolkit/modal"
 import { TweenMax, TimelineLite } from 'gsap'
+import AwesomeMask from 'awesome-mask'
 export default {
   middleware: "notAuthenticated",
   components: {
-    modal
+    modal,
+    'mask': AwesomeMask
   },
   data: () => ({
     phone: "",
