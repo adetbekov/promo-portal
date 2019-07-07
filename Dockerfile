@@ -5,7 +5,7 @@
 # RUN yarn
 
 # CMD ["sudo", "yarn", "dev"]
-FROM node:9.9.0
+FROM node:8.0
 ENV HOST 0.0.0.0
 ENV PORT 3000
 COPY . /app
