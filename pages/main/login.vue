@@ -59,12 +59,18 @@ export default {
       TweenMax.to(element, .08, {
         x: 0,
         delay: .1 * 4
-      });
+      }),
+      clean_phone(){
+        let phone = this.phone
+        phone = phone.replace(/\s/g, '')
+        phone = phone.replace(/\+/g, '')
+        return phone
+      }
     },
     login() {
       this.$axios
         .post(`${this.$store.state.authURL}/rest-auth/login/`, {
-          username: this.phone,
+          username: this.clean_phone,
           password: this.password
         }).then(
           response => {
