@@ -10,6 +10,7 @@ ENV HOST 0.0.0.0
 ENV PORT 3000
 COPY . /app
 WORKDIR /app
+COPY . ./
 # RUN yarn
 # RUN yarn add awesome-mask
 # RUN yarn add nuxt
@@ -19,7 +20,7 @@ WORKDIR /app
 # CMD ["yarn", "start"]
 
 RUN yarn 
-RUN npm install awesome-mask
+RUN yarn add awesome-mask
 RUN yarn add nuxt
 RUN yarn add global nuxt
 RUN yarn build
