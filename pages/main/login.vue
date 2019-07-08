@@ -43,6 +43,14 @@ export default {
     phone: "",
     password: ""
   }),
+  computed: {
+    clean_phone(){
+      let phone = this.phone
+      phone = phone.replace(/\s/g, '')
+      phone = phone.replace(/\+/g, '')
+      return phone
+    }
+  },
   methods: {
     shakeAnimation(element){
       TweenMax.to(element, .08, {
@@ -64,7 +72,7 @@ export default {
     login() {
       this.$axios
         .post(`${this.$store.state.authURL}/rest-auth/login/`, {
-          username: this.phone,
+          username: this.clean_phone,
           password: this.password
         }).then(
           response => {
