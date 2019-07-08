@@ -23,7 +23,8 @@ module.exports = {
         "~/plugins/axios",
         { src: "~/plugins/nuxt-client-init.js", ssr: false },
         '@/plugins/element-ui',
-        { src: "~/plugins/maskedInput.js", ssr: false }
+        { src: "~/plugins/maskedInput.js", ssr: false },
+        { src: "~/plugins/paginate.js", ssr: false }
         // { src: "~/plugins/vue-glide.js", ssr: false }
     ],
     modules: [
@@ -45,7 +46,7 @@ module.exports = {
 
     },
     axios: {
-        baseURL: "https://cors-anywhere.herokuapp.com/api.rglservice.kz/v2/190604120714",
+        baseURL: "https://cors-anywhere.herokuapp.com/api.rglservice.kz/v2/190704113507",
         credentials: false
     },
     build: {

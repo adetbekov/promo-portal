@@ -1,7 +1,7 @@
 <template lang="pug">
 div
     br
-    GiftsTable
+    GiftsTable(rating_link="/r/info/winners/lotto")
     br
 </template>
 
