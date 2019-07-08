@@ -43,6 +43,14 @@ export default {
     phone: "",
     password: ""
   }),
+  computed: {
+    clean_phone(){
+      let phone = this.phone
+      phone = phone.replace(/\s/g, '')
+      phone = phone.replace(/\+/g, '')
+      return phone
+    }
+  },
   methods: {
     shakeAnimation(element){
       TweenMax.to(element, .08, {
@@ -59,13 +67,7 @@ export default {
       TweenMax.to(element, .08, {
         x: 0,
         delay: .1 * 4
-      }),
-      clean_phone(){
-        let phone = this.phone
-        phone = phone.replace(/\s/g, '')
-        phone = phone.replace(/\+/g, '')
-        return phone
-      }
+      });
     },
     login() {
       this.$axios
