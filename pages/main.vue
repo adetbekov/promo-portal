@@ -15,23 +15,24 @@ Container
 				img.banner-laggage(src="~assets/images/main-banner-laggage.png")
 				img.banner-bottle(src="~assets/images/main-banner-bottle.png")
 				img.banner-can(src="~assets/images/main-banner-can.png")
-		div.prizes
-			div.case-1
-				p.case-1-text <span>главный подарок:</span><br/> поездка в египет<br/> на двоих
-				img.case-1-img(src="~assets/images/suitcase1.png")
-			div.case-2
-				p.case-2-text <span>еженедельные подарки:</span><br/> сертификаты на<br/> покупки в сети magnum<br/> и 4 iphone xs max
-				img.case-2-img(src="~assets/images/suitcase2.png")
-			div.about-prizes
-				img(src="~assets/images/take-prize.png")
-				p больше о подарках
-			div.case-3
-				p.case-3-text <span>ежедневные подарки:</span><br/> сертификаты<br/> на покупки <br/>в сети magnum
-				img.case-3-img(src="~assets/images/suitcase3.png")
-			div.case-4
-				p.case-4-text <span>гарантированные подарки:</span><br/> баланс телефона<br/> или qiwi кошелЁк
-				img.case-4-img(src="~assets/images/suitcase4.png")
-		div.lenta
+		div.prizes-container
+			div.prizes
+				div.case-1
+					p.case-1-text <span>главный подарок:</span><br/> поездка в египет<br/> на двоих
+					img.case-1-img(src="~assets/images/suitcase1.png")
+				div.case-2
+					p.case-2-text <span>еженедельные подарки:</span><br/> сертификаты на<br/> покупки в сети magnum<br/> и 4 iphone xs max
+					img.case-2-img(src="~assets/images/suitcase2.png")
+				div.about-prizes
+					img(src="~assets/images/take-prize.png")
+					p больше о подарках
+				div.case-3
+					p.case-3-text <span>ежедневные подарки:</span><br/> сертификаты<br/> на покупки <br/>в сети magnum
+					img.case-3-img(src="~assets/images/suitcase3.png")
+				div.case-4
+					p.case-4-text <span>гарантированные подарки:</span><br/> баланс телефона<br/> или qiwi кошелЁк
+					img.case-4-img(src="~assets/images/suitcase4.png")
+			div.lenta
 		div.rules-header
 			img(src="~assets/images/animated-arrow-right.png")
 			p правила участия в проекте
@@ -49,6 +50,7 @@ Container
 						img.number(src="~assets/images/2.png")
 					img.rules-icon-2(src="~assets/images/rules-cheque.png")
 				p.rules-text на кассе получай<br/> код в чеке за каждый<br/> приобретённый продукт
+			br.rules-break-line
 			div.rule.rule-3
 				div.rule-panel
 					div.circle
@@ -176,10 +178,15 @@ export default {
 		left: 20px;
 		height: auto;
 		width: 100%;
+	.prizes-container
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	.prizes
 		display: flex;
 		margin-top: 31px;
 		margin-top: 75px;
+		z-index: 1;
 	.lenta
 		background: url("~assets/images/lenta.png");
 		width: 100%;
@@ -187,6 +194,7 @@ export default {
 		background-size: 100% 100%;
 		background-position: center;
 		margin-top: -49px;
+		width: 1200px;
 	.case-1, .case-2, .case-3, .case-4
 		display: flex;
 		flex-direction: column;
@@ -314,4 +322,48 @@ export default {
 			color: $color-text-white;
 			margin-right: 60px;
 			margin-left: 60px;
+	@include screen(laptop)
+		.lenta
+			margin-top: -79px;
+			width: 870px;
+		.case-1, .case-2, .case-3, .case-4, .case-1-img, .case-2-img, .case-3-img, .case-4-img, .about-prizes, .about-prizes img
+			transform: scale(0.8);
+		.case-1
+			margin-left: -15px;
+		.case-2
+			margin-left: -170px;
+		.case-3
+			margin-left: -95px;
+		.about-prizes
+			margin-left: -80px;
+		.case-4
+			margin-left: -110px;
+		.banner-laggage, .banner-bottle, .banner-can
+			transform: scale(0.9);
+		.banner-laggage
+			left: -35px;
+		.banner-bottle
+			left: -240px;
+		.banner-can
+			left: -405px;
+		.prizes
+			margin-top: 35px;
+		.rules
+			flex-wrap: wrap;
+			height: 100%;
+			margin-top: 10px;
+			.rule
+				width: 40%;
+				align-items: flex-start;
+				margin-left: 10%;
+			.rule-2, .rule-4
+				width: 40%
+				margin-left: 10%;
+		.rules-text
+			min-width: 181px;
+		.rules-break-line
+			flex-basis: 100%;
+			width: 0px; 
+			height: 0px; 
+			overflow: hidden;
 </style>
