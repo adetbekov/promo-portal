@@ -5,7 +5,7 @@
 # RUN yarn
 
 # CMD ["sudo", "yarn", "dev"]
-FROM node:8.0
+FROM node:8.9
 ENV HOST 0.0.0.0
 ENV PORT 3000
 COPY . /app
@@ -18,9 +18,10 @@ WORKDIR /app
 
 # CMD ["yarn", "start"]
 
-RUN npm install
+RUN yarn 
 RUN npm install awesome-mask
-RUN npm install nuxt
-RUN npm run build
+RUN yarn add nuxt
+RUN yarn add global nuxt
+RUN yarn build
 
-CMD ["sudo", "npm", "run", "start"]
+CMD ["yarn", "start"]
