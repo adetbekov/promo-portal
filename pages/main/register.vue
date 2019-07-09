@@ -31,7 +31,9 @@
     div(slot="body")
       input(type="text", :placeholder="$t('name')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="name", @keyup.13="register()", autofocus)
       input(type="text", :placeholder="$t('surname')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="surname", @keyup.13="register()", autofocus)
-      input(type="text", :placeholder="$t('city')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="city", @keyup.13="register()", readonly)
+      input#city-input(type="text", :placeholder="$t('city')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="city.rus", @keyup.13="register()", @click="showCities = !showCities" readonly, :class="{cityopen: showCities}")
+      div.cities-list(v-show="showCities")
+        div.city(v-for="city in cities", @click="selectCity(city)") {{city.rus}}
       input(type="text", :placeholder="$t('phone')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="phone", @keyup.13="register()" autofocus, v-mask="'+9 999 999 9999'")
       p.error(v-if="this.error.phone") {{error.phone}}
       input(type="text", :placeholder="$t('email')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="email", @keyup.13="register()", autofocus)
@@ -39,13 +41,13 @@
       input(type="password", :placeholder="$t('password')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="password", @keyup.13="register()", autofocus)
       p.error(v-if="this.error.password") {{error.password}}
       div.age-confirm-box
-        div.age-confirm-radio
-        div.age-confirm-text Я подтверждаю, что мне исполнился 21 год, и что я согласен с условиями проекта и с условиями предоставления персональных данных
-      button(@click="register()") {{$t("register")}}
+        input(type="checkbox", id="checkbox", v-model="confirmed", class="age-confirm-radio")
+        label(for="checkbox", class="age-confirm-text") Я подтверждаю, что мне исполнился 21 год, и что я согласен с условиями проекта и с условиями предоставления персональных данных
+      button(@click="register()", :disabled="!confirmed") {{$t("register")}}
       br
     div(slot="footer", class="footer-gray")
       p Уже есть аккаунт?
-      n-link(:to="localePath('login')" id="login") {{ $t("login") }}
+      n-link(:to="localePath('main-login')" id="login") {{ $t("login") }}
 </template>
 
 <script>
@@ -68,7 +70,18 @@ export default {
     phone: "",
     email: "",
     password: "",
-    error: {}
+    error: {},
+    cities: [
+      {eng: "Almaty", rus: "Алматы"},
+      {eng: "Nur-Sultan", rus: "Нур-Султан"},
+      {eng: "Karagandy", rus: "Караганда"},
+      {eng: "Shymkent", rus: "Шымкент"},
+      {eng: "Taldykorgan", rus: "Талдыкорган"},
+      {eng: "Petropavl", rus: "Петропавловск"},
+      {eng: "Kyzylorda", rus: "Кызылорда"}
+    ],
+    showCities: false,
+    confirmed: false
   }),
   methods: {
     shakeAnimation(element){
@@ -96,9 +109,9 @@ export default {
           email: this.email,
           password1: this.password,
           password2: this.password,
-          city: 1,
-          // name: this.name,
-          // surname: this.surname
+          city: this.city.eng,
+          first_name: this.name,
+          last_name: this.surname
         }).then(
           response => {
             this.$store.dispatch("auth/set", response.data.token)
@@ -164,6 +177,10 @@ export default {
       }
 
       return JSON.stringify(obj) === JSON.stringify({});
+    },
+    selectCity: function(city) {
+      this.city = city;
+      this.showCities = false;
     }
 
   }
@@ -200,8 +217,11 @@ button
   &:focus
     outline: none
 
-  &:hover
+  &:hover:not([disabled])
     opacity: 0.9
+
+  &:disabled
+    opacity: 0.7
 
 #forgot
   color: white
@@ -232,13 +252,16 @@ button
   align-items: center;
   margin-bottom: 20px;
 .age-confirm-radio
-  width: 13px;
-  min-width: 13px;
-  height: 13px;
-  background: #E5E5E5;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  margin-right: 6px;
+  width: 20px;
+  transform: scale(1.4);
+  margin-left: 10px;
+
+  min-width: 20px;
+  height: 20px;
+  // background: #E5E5E5;
+  // box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // border-radius: 50%;
+  margin-right: 20px;
 .age-confirm-text
   font-size: 8px;
   line-height: 14px;
@@ -256,6 +279,28 @@ button
   font-size: 16px;
   margin-top: -15px;
   margin-bottom: 5px;
+.cities-list
+  padding: 15px 0;
+  border-radius: 10px;
+  background-color: #F8F8F8;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 16px;
+  color: #000000;
+  margin-top: -31px;
+  margin-bottom: 20px;
+  z-index: 2;
+.city
+  z-index: 2;
+  cursor: pointer;
+  padding: 0 20px;
+.city:hover
+  background-color: #ffffff;
+#city-input
+  // margin-bottom: 0;
+.cityopen
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 </style>
 
 <style scoped>

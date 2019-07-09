@@ -4,13 +4,15 @@
     "phone": "телефон",
     "password": "пароль",
     "login": "войти",
-    "forgot": "Забыли пароль?"
+    "forgot": "Забыли пароль?",
+    "register": "Зарегистрироваться (1 минута)"
   },
   "kz": {
     "phone": "телефон",
     "password": "құпиясөз",
     "login": "кіру",
-    "forgot": "Забыли пароль?"
+    "forgot": "Забыли пароль?",
+    "register": "Зарегистрироваться (1 минута)"
   }
 }
 </i18n>
@@ -27,6 +29,7 @@
       n-link(:to="localePath('forgot')" id="forgot") {{ $t("forgot") }}
     div(slot="footer", class="footer-gray")
       p Впервые на сайте?
+      n-link(:to="localePath('main-register')" id="register") {{ $t("register") }}
 </template>
 
 <script>
@@ -132,9 +135,23 @@ button
 .footer-gray
   background-color: #EFEFEF
   margin: 0
+  height: 100%
+  width: calc(100% + 60px)
+  margin-left: -30px
+  height: 120px
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25)
+  border-radius: 10px 10px 0px 0px
+  padding: 24px 30px 40px
 
   p
     color: #808080
+
+#register
+  font-size: 14px
+  line-height: 14px
+  color: #C42D28
+  text-decoration: none
+  text-transform: none
 </style>
 
 <style scoped>

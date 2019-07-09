@@ -19,8 +19,13 @@ export const actions = {
         commit("UPDATE", auth)
         dispatch("set_user")
     },
-    set_user: async({ commit, rootState }) => {
-        let { data } = await axios.get(`${rootState.authURL}/api/accounts/current`)
+    set_user: async({ commit, rootState, getters }) => {
+        let { data } = await axios.get(`${rootState.authURL}/api/accounts/current`, {
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Authorization": `JWT ${ getters.getToken }`
+            }
+        })
         commit('SET_USER', data)
         console.log("welcome to hell", data)
     },
