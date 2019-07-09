@@ -109,8 +109,8 @@ export default {
           password1: this.password,
           password2: this.password,
           city: this.city.eng,
-          // name: this.name,
-          // surname: this.surname
+          first_name: this.name,
+          last_name: this.surname
         }).then(
           response => {
             this.$store.dispatch("auth/set", response.data.token)
