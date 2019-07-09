@@ -47,7 +47,7 @@
       br
     div(slot="footer", class="footer-gray")
       p Уже есть аккаунт?
-      n-link(:to="localePath('login')" id="login") {{ $t("login") }}
+      n-link(:to="localePath('main-login')" id="login") {{ $t("login") }}
 </template>
 
 <script>

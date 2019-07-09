@@ -57,6 +57,8 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
+  max-height: calc(100vh);
+  overflow-y: auto;
 }
 
 .modal-header h1 {
