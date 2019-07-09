@@ -41,6 +41,8 @@
         "vue-i18n": "^8.11.2",
         "vue-loader": "^15.7.0",
         "vue-pagination-table": "^0.1.4",
+        "vue-spinner": "^1.0.3",
+        "vuejs-paginate": "^2.1.0",
         "vuetable": "^1.5.12",
         "webpack-node-externals": "^1.7.2"
     },
