@@ -20,6 +20,7 @@
 Container.cabinet
 	br
 	.info
+		p {{ $store.getters["auth/getUser"] }}
 		.balances 
 			.first
 				p {{ $t("balance", { codes: "75" }) }}

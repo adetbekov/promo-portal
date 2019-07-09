@@ -5,7 +5,7 @@ export default function({ store, $axios, redirect }) {
         }
         if (error.code == 401 || error.code == 403) {
             // store.dispatch("auth/remove")
-            location.reload()
+            // location.reload()
         }
         if (error.code === 400) {
             redirect("/400")
