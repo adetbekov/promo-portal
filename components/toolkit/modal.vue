@@ -1,7 +1,7 @@
 <template>
     <transition name="fade">
     <div class="modal-mask">
-      <div class="modal-wrapper">
+      <div class="modal-wrapper" @click.self="close()">
         <div class="modal-container" id="loginmodal">
 
           <div class="modal-header">
@@ -23,6 +23,18 @@
     </div>
   </transition>
 </template>
+
+<script>
+export default {
+  methods: {
+    close(){
+      console.log("sfbksjnfjsdhblj")
+      this.$router.push({path: this.localePath('main')})
+    }
+  }
+}
+</script>
+
 
 <style scoped>
 .modal-mask {

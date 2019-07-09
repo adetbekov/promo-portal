@@ -253,7 +253,7 @@ button
   margin-bottom: 20px;
 .age-confirm-radio
   width: 20px;
-  transform: scale(2);
+  transform: scale(1.4);
   margin-left: 10px;
 
   min-width: 20px;
