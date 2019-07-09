@@ -19,10 +19,15 @@ COPY . ./
 
 # CMD ["yarn", "start"]
 
-RUN yarn 
-RUN yarn add awesome-mask
-RUN yarn add nuxt
-RUN yarn add global nuxt
-RUN yarn build
+# RUN yarn 
+# RUN yarn add awesome-mask
+# RUN yarn add nuxt
+# RUN yarn add global nuxt
+# RUN yarn build
+RUN npm install 
+RUN npm install awesome-mask
+RUN npm install nuxt
+# RUN yarn add global nuxt
+RUN npm run build
 
-CMD ["yarn", "start"]
+CMD ["npm", "run", "start"]
