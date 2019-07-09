@@ -41,9 +41,9 @@
       input(type="password", :placeholder="$t('password')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="password", @keyup.13="register()", autofocus)
       p.error(v-if="this.error.password") {{error.password}}
       div.age-confirm-box
-        div.age-confirm-radio
-        div.age-confirm-text Я подтверждаю, что мне исполнился 21 год, и что я согласен с условиями проекта и с условиями предоставления персональных данных
-      button(@click="register()") {{$t("register")}}
+        input(type="checkbox", id="checkbox", v-model="confirmed", class="age-confirm-radio")
+        label(for="checkbox", class="age-confirm-text") Я подтверждаю, что мне исполнился 21 год, и что я согласен с условиями проекта и с условиями предоставления персональных данных
+      button(@click="register()", :disabled="!confirmed") {{$t("register")}}
       br
     div(slot="footer", class="footer-gray")
       p Уже есть аккаунт?
@@ -80,7 +80,8 @@ export default {
       {eng: "Petropavl", rus: "Петропавловск"},
       {eng: "Kyzylorda", rus: "Кызылорда"}
     ],
-    showCities: false
+    showCities: false,
+    confirmed: false
   }),
   methods: {
     shakeAnimation(element){
@@ -216,8 +217,11 @@ button
   &:focus
     outline: none
 
-  &:hover
+  &:hover:not([disabled])
     opacity: 0.9
+
+  &:disabled
+    opacity: 0.7
 
 #forgot
   color: white
@@ -248,13 +252,16 @@ button
   align-items: center;
   margin-bottom: 20px;
 .age-confirm-radio
-  width: 13px;
-  min-width: 13px;
-  height: 13px;
-  background: #E5E5E5;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  margin-right: 6px;
+  width: 20px;
+  transform: scale(2);
+  margin-left: 10px;
+
+  min-width: 20px;
+  height: 20px;
+  // background: #E5E5E5;
+  // box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // border-radius: 50%;
+  margin-right: 20px;
 .age-confirm-text
   font-size: 8px;
   line-height: 14px;
