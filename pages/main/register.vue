@@ -31,7 +31,9 @@
     div(slot="body")
       input(type="text", :placeholder="$t('name')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="name", @keyup.13="register()", autofocus)
       input(type="text", :placeholder="$t('surname')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="surname", @keyup.13="register()", autofocus)
-      input(type="text", :placeholder="$t('city')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="city", @keyup.13="register()", readonly)
+      input#city-input(type="text", :placeholder="$t('city')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="city.rus", @keyup.13="register()", @click="showCities = !showCities" readonly, :class="{cityopen: showCities}")
+      div.cities-list(v-show="showCities")
+        div.city(v-for="city in cities", @click="selectCity(city)") {{city.rus}}
       input(type="text", :placeholder="$t('phone')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="phone", @keyup.13="register()" autofocus, v-mask="'+9 999 999 9999'")
       p.error(v-if="this.error.phone") {{error.phone}}
       input(type="text", :placeholder="$t('email')", autocomplete="off", autocorrect="off", autocapitalize="off", spellcheck="false", v-model="email", @keyup.13="register()", autofocus)
@@ -68,7 +70,17 @@ export default {
     phone: "",
     email: "",
     password: "",
-    error: {}
+    error: {},
+    cities: [
+      {eng: "Almaty", rus: "Алматы"},
+      {eng: "Nur-Sultan", rus: "Нур-Султан"},
+      {eng: "Karagandy", rus: "Караганда"},
+      {eng: "Shymkent", rus: "Шымкент"},
+      {eng: "Taldykorgan", rus: "Талдыкорган"},
+      {eng: "Petropavl", rus: "Петропавловск"},
+      {eng: "Kyzylorda", rus: "Кызылорда"}
+    ],
+    showCities: false
   }),
   methods: {
     shakeAnimation(element){
@@ -96,7 +108,7 @@ export default {
           email: this.email,
           password1: this.password,
           password2: this.password,
-          city: 1,
+          city: this.city.eng,
           // name: this.name,
           // surname: this.surname
         }).then(
@@ -164,6 +176,10 @@ export default {
       }
 
       return JSON.stringify(obj) === JSON.stringify({});
+    },
+    selectCity: function(city) {
+      this.city = city;
+      this.showCities = false;
     }
 
   }
@@ -256,6 +272,28 @@ button
   font-size: 16px;
   margin-top: -15px;
   margin-bottom: 5px;
+.cities-list
+  padding: 15px 0;
+  border-radius: 10px;
+  background-color: #F8F8F8;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 16px;
+  color: #000000;
+  margin-top: -31px;
+  margin-bottom: 20px;
+  z-index: 2;
+.city
+  z-index: 2;
+  cursor: pointer;
+  padding: 0 20px;
+.city:hover
+  background-color: #ffffff;
+#city-input
+  // margin-bottom: 0;
+.cityopen
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 </style>
 
 <style scoped>
